@@ -1,0 +1,60 @@
+/* styling of table and form */
+ body{
+    background-image: url(./images/photo-1607082348824-0a96f2a4b9da.jpeg);
+    background-size: cover;
+    opacity: 0.8;
+    background-size: cover;
+}
+
+#tform{
+    display: flex;
+    justify-content: space-between;
+}
+#tform .table{
+    background-color: aliceblue;
+    margin-top: 10%;
+    width: 845px;
+    margin-left: 5%;
+    padding: 10px ;
+    border: 1px black solid;
+}
+
+#tform .table thead th{
+    padding: 0 30px;
+    /* border-radius: 20px; */
+    
+}
+
+
+
+
+#tform .form{
+    background-color: aliceblue;
+    opacity: 0.9;
+    border-radius: 20px;
+    padding: 20px;
+    margin-right: 10%;
+    margin-top: 10%;
+}
+#tform .image input{
+    border-radius: 0;
+}
+
+
+
+#tform input{
+    width: 80%;
+    border-radius: 10px;
+}
+#tform button{
+    width: 82%;
+    border-radius: 10px;
+    margin-top: 20px;
+
+}
+
+#tform button:hover{
+    cursor: pointer;
+    background-color: lightblue;
+
+} 
