@@ -54,7 +54,7 @@
                                         
                                     </tr>
                                  ";
-                                  // ...and so on    
+                                //   ...and so on    
                                  }
                              } else {
                                  echo "Error: " . $mysqli->error;
