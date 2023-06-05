@@ -3,10 +3,10 @@
     background-image: url(./images/photo-1607082348824-0a96f2a4b9da.jpeg);
     background-size: cover;
     opacity: 0.8;
-    background-size: cover;
+    /* background-size: cover; */
 }
 
-#tform{
+#tform {
     display: flex;
     justify-content: space-between;
 }
@@ -35,6 +35,7 @@
     padding: 20px;
     margin-right: 10%;
     margin-top: 10%;
+    height: 12cm;
 }
 #tform .image input{
     border-radius: 0;
@@ -57,4 +58,22 @@
     cursor: pointer;
     background-color: lightblue;
 
-} 
+}  
+.message{
+    background-color:  green;
+    font-weight: 600;
+    margin-left: 40%;
+    width: 20%;
+    margin-top: 50px;
+    font-size: 20px;
+    border: 1px black solid;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 0;
+    position: sticky;
+    text-align: center;
+    justify-content: center;
+
+}
+

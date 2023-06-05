@@ -1,0 +1,52 @@
+/* login page */
+.loginbody{
+    background-image: url(./images/photo-1607082348824-0a96f2a4b9da.jpeg);
+	background-size: cover;
+	opacity: 0.7;
+
+}
+
+#login{
+
+	background-color: aliceblue;
+	border: #000;
+	border-radius: 20px;
+	width: 25%;
+	margin-left: 40%;
+	margin-top: 10%;
+	padding-left: 30px;
+	padding-bottom: 20px;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#login h3{
+	padding-top: 20px;
+	font-weight: 500;
+	text-align: center;
+}
+#login .button{
+	size: 20px;
+	width: 70%;
+	margin-top: 20px;
+	justify-content: center;
+	text-align: center;
+	margin-bottom: 20px;
+	/* padding: 0 30px; */
+	border-radius: 20px;
+}
+
+#login .button :hover{
+	background-color:#fff;
+	cursor: pointer;
+	
+}
+#login input{
+	border-radius: 20px;
+}
+
+#login a{
+	text-decoration: none;
+	color: #000;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	text-align: center;
+	padding-left: 20%;
+}

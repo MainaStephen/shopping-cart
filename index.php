@@ -61,7 +61,7 @@ if(empty($_SESSION["shopping_cart"])) {
             <li><a href="#">Home</a></li>
             <li><a href="#">Cart</a></li>
             <li><a href="#">Contact</a></li>
-            <li><a href="admin.html">Admin</a></li>
+            <li><a href="login.php">Admin</a></li>
         </ul>
     </div>
 </section>
@@ -83,7 +83,7 @@ while($row = mysqli_fetch_assoc($result)){
     echo "<div class='product_wrapper'>
     <form method='post' action=''>
     <input type='hidden' name='code' value=".$row['code']." />
-    <div class='image'><img src='".$row['image']."' /></div>
+    <div class='image'><img src='images/uploadedFiles/".$row['image']."' width='100' height='100' /></div>
     <div class='name'>".$row['name']."</div>
     <div class='price'>$".$row['price']."</div>
     <button type='submit' class='buy'>Buy Now</button>
