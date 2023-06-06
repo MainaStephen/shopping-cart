@@ -32,6 +32,28 @@
     }
   }
 
+  $response = "";
+
+  if(isset($_GET['res'])) {
+
+    $response = $_GET['res'];
+    if($response == 1) {
+      echo " <div class='message' id='del_msg'>
+      <p>Login Successful</p>
+    </div>";
+    }
+  }
+
+
+  if(isset($_GET['res'])) {
+
+    $response = $_GET['res'];
+    if($response == 2) {
+      echo " <div class='message' id='del_msg'>
+      <p>Signup Successful</p>
+    </div>";
+    }
+  }
 
   ?>
 

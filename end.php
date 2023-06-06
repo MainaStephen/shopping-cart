@@ -6,7 +6,7 @@ $statusMsg = '';
 
 //Add
 if(isset($_POST['save_btn'])){
-        // File upload path
+        // File upload path  to folder
     $targetDir = "images/uploadedFiles/";
     $fileName = basename($_FILES["image"]["name"]);
     $targetFilePath = $targetDir . $fileName;
@@ -63,6 +63,7 @@ if(isset($_POST['save_btn'])){
     // $Timestamp = strtotime($dateTimeZone->format('Y-m-d H:i:s'));
       
 } 
+
 echo $statusMsg;
 
 function getAllDetails($tableName){
@@ -112,8 +113,6 @@ return $result;
 if(isset($_POST['upd_btn'])){
     
     //fetch Variables
-//    $uname =  preg_replace('/[^A-Za-z ]/', '', $_POST['username']);
-
     $pid = mysqli_real_escape_string($con, $_POST['id']);
     $pname = mysqli_real_escape_string($con, $_POST['name']);
     $pcode = mysqli_real_escape_string($con, $_POST['code']);
@@ -142,8 +141,8 @@ if(isset($_POST['upd_btn'])){
         }
     }
     
-    //delete
-    if(isset($_POST['del_btn'])){ 
+//delete
+if(isset($_POST['del_btn'])){ 
     
         //fetch Variables
         $pid = mysqli_real_escape_string($con, $_POST['id']);
@@ -161,8 +160,79 @@ if(isset($_POST['upd_btn'])){
     } 
 
 
+
+//login
+if(isset($_POST['login_btn'])){
+            //Session Variables
+        // $user_sesh = $_SESSION['user_id'];
+
+        //fetch Variables
+        $uname = mysqli_real_escape_string($con, $_POST['username']);
+        $upass = mysqli_real_escape_string($con, $_POST['password']);
+
+        if(empty($uname) || empty($upass)){
+            $error= "Fill in the required credentials";
+            header("Location: login.php?error=". urlencode($error));
+            exit();
+        }else{
+            //Sql
+            $sql = mysqli_query($con, "SELECT * FROM `users` WHERE username='$uname' AND password='$upass' ");
+        
+            if ($sql && mysqli_num_rows($sql) > 0) {
+                $row = mysqli_fetch_assoc($sql);
+            
+                // Verify the password
+                if ($_POST['password'] === $row['password']) {
+                    // Redirect to the admin page
+                    header("location: admin.php?res=1");
+                    exit();
+                } else {
+                    $error= "Invalid username or password.";
+                    header("Location: login.php?error=". urlencode($error));
+                    exit();
+                }
+            } else {
+                $error= "Invalid username or password.";
+                header("Location: login.php?error=". urlencode($error));
+                exit();
+            }
+        }
+          
+} 
+//sign up admin.
+if(isset($_POST['signup_btn'])){
+    //Session Variables
+    // $user_sesh = $_SESSION['user_id'];
+
+    //fetch Variables
+    // $uname =  preg_replace('/[^A-Za-z ]/', '', $_POST['username']);
+    
+    $uname = mysqli_real_escape_string($con, $_POST['username']);
+    $upass = mysqli_real_escape_string($con, $_POST['password']);
+    $con_upass = mysqli_real_escape_string($con, $_POST['confirmpass']);
+    
+    
+
+    if ($_POST['password'] === $_POST['confirmpass']){
+        //Sql
+    $sql = mysqli_query($con, "INSERT INTO `users`(`username`, `password`, `confirmpass`) 
+    VALUES('$uname', '$upass','$con_upass')");
+        if(!$sql){
+            echo "Error encountered".mysqli_error($con);
+        } else {
+          
+            header("location: admin.php");
+
+            }
+
+    } else {
+        $error= "enter identical passwords";
+        header("Location: signup.php?error=". urlencode($error));
+    }
+
+ 
+    
+    
+} 
 ?>
-
-
-
 
