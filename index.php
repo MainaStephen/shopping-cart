@@ -65,6 +65,7 @@ if(empty($_SESSION["shopping_cart"])) {
         </ul>
     </div>
 </section>
+
 <?php
 if(!empty($_SESSION["shopping_cart"])) {
 $cart_count = count(array_keys($_SESSION["shopping_cart"]));

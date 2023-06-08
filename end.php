@@ -6,6 +6,8 @@ $statusMsg = '';
 
 //Add
 if(isset($_POST['save_btn'])){
+        //Session Variables
+        // $user_sesh = $_SESSION['user_id'];
         // File upload path  to folder
     $targetDir = "images/uploadedFiles/";
     $fileName = basename($_FILES["image"]["name"]);
@@ -162,9 +164,10 @@ if(isset($_POST['del_btn'])){
 
 
 //login
+// session_start();
 if(isset($_POST['login_btn'])){
-            //Session Variables
-        // $user_sesh = $_SESSION['user_id'];
+       //Session Variables
+            $user_sesh = $_SESSION['user_id'];
 
         //fetch Variables
         $uname = mysqli_real_escape_string($con, $_POST['username']);
@@ -186,6 +189,7 @@ if(isset($_POST['login_btn'])){
                     // Redirect to the admin page
                     header("location: admin.php?res=1");
                     exit();
+
                 } else {
                     $error= "Invalid username or password.";
                     header("Location: login.php?error=". urlencode($error));
@@ -197,7 +201,10 @@ if(isset($_POST['login_btn'])){
                 exit();
             }
         }
-          
+        // if (!isset($_SESSION['user_id']) ) {
+        //     header('Location: login.php');
+        // }
+
 } 
 //sign up admin.
 if(isset($_POST['signup_btn'])){
@@ -208,8 +215,8 @@ if(isset($_POST['signup_btn'])){
     // $uname =  preg_replace('/[^A-Za-z ]/', '', $_POST['username']);
     
     $uname = mysqli_real_escape_string($con, $_POST['username']);
-    $upass = mysqli_real_escape_string($con, $_POST['password']);
-    $con_upass = mysqli_real_escape_string($con, $_POST['confirmpass']);
+    $upass = mysqli_real_escape_string($con, sha1($_POST['password']));
+    $con_upass = mysqli_real_escape_string($con, sha1($_POST['confirmpass']));
     
     
 
@@ -222,6 +229,7 @@ if(isset($_POST['signup_btn'])){
         } else {
           
             header("location: admin.php");
+            header("location: admin.php?res=2");
 
             }
 

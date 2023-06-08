@@ -3,39 +3,62 @@
     background-image: url(./images/photo-1607082348824-0a96f2a4b9da.jpeg);
     background-size: cover;
     opacity: 0.8;
-    /* background-size: cover; */
 }
 
 #tform {
     display: flex;
     justify-content: space-between;
 }
+.sidebar{
+    background-color: aliceblue;
+    width: 15%;
+}
+
+#tform .navbar {
+    color: black;
+    font-size: 20px;
+    font-weight: 970;
+    text-decoration: underline;
+}
+#tform .sidebar ul li{
+    color: black;
+    text-decoration: none;
+    list-style: none;
+    margin-top: 60px;
+    text-align: center;
+}
+#tform .sidebar ul li a{
+    color: black;
+    margin-top: 200%;
+    font-size: 30px;
+}
+#tform .logout{
+    margin-top: 300px;
+}
+
+
 #tform .table{
     background-color: aliceblue;
     margin-top: 10%;
     width: 845px;
-    margin-left: 5%;
     padding: 10px ;
     border: 1px black solid;
 }
 
 #tform .table thead th{
     padding: 0 30px;
-    /* border-radius: 20px; */
+
     
 }
-
-
-
-
 #tform .form{
     background-color: aliceblue;
     opacity: 0.9;
     border-radius: 20px;
     padding: 20px;
-    margin-right: 10%;
+    margin-right: 10px;
     margin-top: 10%;
     height: 12cm;
+    width: 20%;
 }
 #tform .image input{
     border-radius: 0;
@@ -77,3 +100,33 @@
 
 }
 
+/* profile starts here */
+#profile{
+	/* border: #000 9px solid; */
+	display: flex;
+	/* justify-content: end;
+	align-items: end; */
+	margin-left: 85%;
+    margin-top: 20px;
+    /* background-color: aliceblue; */
+    width: 15%;
+}
+#profile ul{
+    list-style: none;
+}
+#profile ul li a{
+    text-decoration: none;
+    list-style: none;
+    color: black;
+    display: block;
+    font-size: 20px;
+    background-color: aliceblue;
+}
+
+#profile ul li ul li{
+    display: none;
+}
+
+#profile ul li:hover ul li{
+    display: block;
+}
